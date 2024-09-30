@@ -5,18 +5,19 @@ import { StepsService } from '../servicio/steps.service';
 import { IStep } from '../interface/i-step';
 
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    imports: [CommonModule, EscenaComponent],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule, EscenaComponent],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    steps: IStep[] = [];
-    constructor(public stepsService: StepsService) {}
+  steps: IStep[] = [];
 
-    ngOnInit(): void {
-        this.steps = this.stepsService.getSteps();
-        console.log(this.steps);
-    }
+  constructor(public stepsService: StepsService) {}
+
+  ngOnInit(): void {
+    this.steps = this.stepsService.getSteps();
+    console.log(this.steps);
+  }
 }

@@ -1,7 +1,9 @@
-<div *ngFor="let step of steps">
+<div>
+  @for (step of steps; track step.title) {
     <h3>{{ step.title }}</h3>
     <p>{{ step.description }}</p>
     <br>
-  </div>
+  }
+</div>
 
-<app-escena></app-escena>
+<app-escena [data] = "steps"></app-escena>

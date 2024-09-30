@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IStep } from '../interface/i-step';
 
 @Component({
   selector: 'app-escena',
   standalone: true,
   imports: [],
   templateUrl: './escena.component.html',
-  styleUrl: './escena.component.scss'
+  styleUrls: ['./escena.component.scss']
 })
 export class EscenaComponent {
+
+@Input() data: IStep[] = [];
 
 }
