@@ -1,0 +1,22 @@
+<div class="escena-container">
+  <div class="step-container">
+    <div class="card m-2 col-sm-3 col-md-4 col-lg-3 d-flex flex-column">
+      <img class="card-img-top img-fluid" [src]= "data[currentStep].image" [ngStyle]="{ 'background-color': data[currentStep].bgcolor }" alt="{{ data[currentStep].title }}" />
+      <div class="card-body">
+        <h3>{{ data[currentStep].title }}</h3>
+        <p>{{ data[currentStep].description }}</p>
+        <div class="navigation mt-3 d-flex justify-content-end">
+            <button class="btn btn-dark" (click)= "prevStep()" [disabled]="currentStep === 0" > <span class="arrow">&lt;</span></button>
+            <button class="btn btn-dark" (click)= "nextStep()" [disabled]="currentStep === data.length - 1"> &gt; </button>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="step-indicators">
+    <ng-container *ngFor="let step of data; let i = index">
+        <div class="indicator" [class.active]="isActiveStep(i)"></div>
+      </ng-container>
+    </div>
+  </div>
+

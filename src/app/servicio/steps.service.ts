@@ -10,17 +10,20 @@ export class StepsService {
     {
       title: 'Dedica muchas horas',
       description: 'Al menos 30 horas a la semana. Si no tienes suficiente, tendrás que dedicarle más horas. Al principio parece imposible, pero notarás una mejoría rápidamente.',
-      image: 'assets/time_managment.svg'
+      image: 'assets/time_managment.svg',
+      bgcolor: '#0aa7b3'
     },
     {
       title: 'Programa proyectos propios',
       description: 'Más vale 10 horas trabajando en proyectos propios, que 10 horas mirando tutoriales. La motivación y la implicación en el proyecto ayudará a acelerar tu aprendizaje.',
-      image: 'assets/programming.svg'
+      image: 'assets/programming.svg',
+      bgcolor: '#D3D3D3'
     },
     {
       title: 'Procura descansar',
       description: 'Descansar bien  y desconectar son vitales. De esta forma reducirás el estrés y la ansiedad. Mejorarás tu concentración y afianzarás tu aprendizaje.',
-      image: 'assets/meditation.svg'
+      image: 'assets/meditation.svg',
+      bgcolor: '#FFD700'
     }
   ]
 getSteps(): IStep[] {

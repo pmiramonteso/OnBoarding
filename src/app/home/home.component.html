@@ -1,10 +1,11 @@
-<div>
-  @for (step of steps; track step.title) {
-    <h3>{{ step.title }}</h3>
-    <p>{{ step.description }}</p>
-    <img [src]= "step.image" alt = "{{ step.title }}"/>
-    <br>
-  }
+<div class="container-fluid">
+  <div class="container d-flex align-items-center">
+    <div class="row d-flex justify-content-center">
+    
+      <app-escena [data]= "steps"></app-escena>
+
+    </div>
+  </div>
 </div>
 
-<app-escena [data] = "steps"></app-escena>
+
