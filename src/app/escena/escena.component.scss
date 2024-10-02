@@ -1,7 +1,11 @@
 .card {
     border-radius: 50px;
     height: 100%;
-    width: 50%;
+    width: 40%;
+}
+
+.step-container {
+    margin: 5% auto;
 }
 
 .card-img-top {
@@ -11,6 +15,31 @@ border-top-left-radius: 50px;
 border-top-right-radius: 50px;
 }
 
+.card-body {
+    height: 300px;
+    align-content: center;
+}
 .btn {
 border-radius: 100%;
+}
+
+.step-indicators {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    background-color: gray;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: black;
+    transition: scale (1.5);
 }
