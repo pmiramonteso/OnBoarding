@@ -29,5 +29,4 @@ prevStep(): void {
 isActiveStep(index: number): boolean {
   return this.currentStep === index;
 }
-
 }

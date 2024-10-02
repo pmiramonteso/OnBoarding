@@ -1,41 +1,32 @@
 <div class="container-fluid">
-  <div class="container d-flex align-items-center justify-content-center">
-    <div class="row">
-      <div class="step-container">
-        <div class="card m-2 col-sm-12 col-md-4 col-lg-3 d-flex flex-column align-content-center">
-          <img
-            class="card-img-top img-fluid"
-            [src]="data[currentStep].image"
-            [ngStyle]="{ 'background-color': data[currentStep].bgcolor }"
-            alt="{{ data[currentStep].title }}"
-          />
-          <div class="card-body">
-            <h3 class="mb-4">{{ data[currentStep].title }}</h3>
-            <p class="mb-4">{{ data[currentStep].description }}</p>
-            <div class="navigation mt-3 d-flex justify-content-end">
-              <button
-                class="btn btn-dark"
-                (click)="prevStep()"
-                @If "(currentStep > 0)" <!>
-              >
-                <span class="arrow">&lt;</span>
+  <div class="row d-flex align-items-center justify-content-center vh-100">
+    <div class="step-container col-sm-12 col-md-8 col-lg-6">
+      <div class="card m-2  d-flex flex-column align-items-center">
+        <img class="card-img-top img-fluid" [src]="data[currentStep].image" [ngStyle]="{ 'background-color': data[currentStep].bgcolor }" alt="{{ data[currentStep].title }}"/>
+        <div class="card-body">
+          <h3 class="mb-4">{{ data[currentStep].title }}</h3>
+          <p class="mb-4">{{ data[currentStep].description }}</p>
+          <div class="navigation">
+            @if (currentStep > 0) {
+              <button class="btn btn-dark" (click)="prevStep()" style="position: absolute; left: 0">
+                <i class="fas fa-arrow-left"></i>
               </button>
-              <button
-                class="btn btn-dark"
-                (click)="nextStep()"
-                @If ( currentStep = data.length - 1)
-              >
-                &gt;
+            }
+            @if (currentStep < data.length - 1) {
+              <button class="btn btn-dark" (click)="nextStep()" style="position: absolute; right: 0">
+                <i class="fas fa-arrow-right"></i>
               </button>
-            </div>
-            <div class="step-indicators">
-              <ng-container *ngFor="let step of data; let i = index">
-                <div class="indicator" [class.active]="isActiveStep(i)"></div>
-              </ng-container>
-            </div>
+            }
           </div>
+          <div class="step-indicators">
+            <div class="step-indicators">
+              @for (step of data; track step) {
+              <div class="indicator" [class.active]="isActiveStep(data.indexOf(step))"></div>
+              }
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
