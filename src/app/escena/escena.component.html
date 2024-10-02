@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row d-flex align-items-center justify-content-center vh-100">
     <div class="step-container col-sm-12 col-md-8 col-lg-6">
-      <div class="card m-2  d-flex flex-column align-items-center">
+      <div class="card m-2  d-flex flex-column align-items-center" [@slideInOut]>
         <img class="card-img-top img-fluid" [src]="data[currentStep].image" [ngStyle]="{ 'background-color': data[currentStep].bgcolor }" alt="{{ data[currentStep].title }}"/>
         <div class="card-body">
           <h3 class="mb-4">{{ data[currentStep].title }}</h3>
