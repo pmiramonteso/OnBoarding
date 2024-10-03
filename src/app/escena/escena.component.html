@@ -7,24 +7,41 @@
         i) {
         <div class="card mb-5" [@slideInOut]>
           <div class="card-content">
-            <img class="card-img-top img-fluid" [src]="step.image" [ngStyle]="{ 'background-color': step.bgcolor }" alt="{{ step.title }}"/>
+            <img
+              class="card-img-top img-fluid"
+              [src]="step.image"
+              [ngStyle]="{ 'background-color': step.bgcolor }"
+              alt="{{ step.title }}"
+            />
             <div class="card-body">
               <h3 class="mb-4">{{ step.title }}</h3>
               <p class="mb-4">{{ step.description }}</p>
               <div class="navigation">
                 @if (currentStep > 0) {
-                <button class="btn btn-dark" (click)="prevStep()" style="position: absolute; left: 0">
+                <button
+                  class="btn btn-dark"
+                  (click)="prevStep()"
+                  style="position: absolute; left: 0"
+                >
                   <i class="fas fa-arrow-left"></i>
                 </button>
                 } @if (currentStep < data.length - 1) {
-                <button class="btn btn-dark" (click)="nextStep()" style="position: absolute; right: 0">
+                <button
+                  class="btn btn-dark"
+                  (click)="nextStep()"
+                  style="position: absolute; right: 0"
+                >
                   <i class="fas fa-arrow-right"></i>
                 </button>
                 }
               </div>
               <div class="step-indicators d-flex justify-content-center mt-4">
                 @for (step of data; track step; let j = $index) {
-                <div class="indicator" [class.active]="j === currentStep"></div>
+                <div
+                  class="indicator"
+                  [class.active]="isActiveStep(j)"
+                  (click)="currentStep = j"
+                ></div>
                 }
               </div>
             </div>
